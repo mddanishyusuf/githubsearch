@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="topgit">
+<head>
+<title ng-bind="title">Home | Explore Github Open Source Projects</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="assets/css/githubsearch.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=BioRhyme|Montserrat" rel="stylesheet">
+</head>
+<body ng-cloak>
+<md-toolbar class="md-hue-2" style="background-color: rgb(255,255,255);color:rgb(116, 113, 113);border-bottom: 2px solid #eee" class="nav_bar">
+    <div class="md-toolbar-tools">
+        <i class="fa fa-github fa-2x"></i>       
+        <h2><span><a href="#/" ng-click="toggleLeft()"> GithubSearch</a></span></h2>
+        <span flex></span>
+        <md-card hide-xs style="box-shadow: none">
+        <md-card-header>
+            <md-card-avatar style="width: 40px;">
+                <img class="md-user-avatar" src="https://avatars.githubusercontent.com/u/9165019?v=3"/>
+            </md-card-avatar>
+            <md-card-header-text>
+                <span class="md-title">Mohd Danish Yusuf</span>
+                <span class="md-subhead"><i class="fa fa-github"></i> <a ng-href="https://github.com/mddanishyusuf" class="md-accent" target="_blank" style="color: rgb(116, 113, 113);">mddanishyusuf</a></span>
+            </md-card-header-text>
+        </md-card-header>
+        </md-card>
+    </div>
+</md-toolbar>
+<div ui-view></div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86945790-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script src="assets/js/angular.min.js"></script>
+<script src="assets/js/angular-route.min.js"></script>
+<script src="assets/js/githubsearch.min.js"></script>
+<script src="assets/js/appRoutes.min.js"></script>
+<script src="assets/js/languageController.min.js"></script>
+<script src="assets/js/keywordController.min.js"></script>
+<script src="assets/js/authorController.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+<script src="assets/js/autocompleteController.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<md-content class="search_section home-title">
+    <div layout="row" layout-align="center" ng-cloak>
+		<form name="colorForm" flex-xs="90" flex="60">
+            <h2 align="center">Keyword Search</h2>
+		<h4 align="center">Get repository related to your keyword</h4>
+			<input class="keywordInput" name="favoriteColor" ng-model="keywords" placeholder="Explore Github Public Repository by Custom Keyword">
+			<center><md-button ng-click="keywordSearch(keywords)">Let's See</md-button></center>		
+		</form>
+		</div>
+</md-content>
+<div ui-view></div>

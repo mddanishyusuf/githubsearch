@@ -1,0 +1,90 @@
+<div layout="row" layout-sm="column" layout-align="space-around" layout-align="top center" ng-show="showTopGitList" style="background-color: #f1f1f1;padding-top:40px">
+    <md-progress-circular md-mode="indeterminate" md-diameter="20px"></md-progress-circular> 
+</div>
+<md-content layout-padding ng-show="gitList">
+    <div layout="row" layout-wrap>
+        <div flex>
+            <div class="col-md-5" flex>
+            <span ng-click="listLayout()" style="cursor: pointer"><i class="fa fa-list"></i></span>
+            <span ng-click="boxLayout()" style="cursor: pointer"><i class="fa fa-th"></i></span> 
+            <span class="responce-message"><b>{{total_github_repo}}</b> Repositories in <b>"{{language_name}}" </b></span>
+            </div>
+            <div class="col-md-5 trending_repo" ng-show="language_page" flex><b>Trending Repository : </b> <a ng-click="trending(language_name,today_date,'today')">Today</a> / <a ng-click="trending(language_name,last_weak_date,'last_weak')">Last Waek</a> / <a ng-click="trending(language_name,last_month_date,'last_month')">Last Month</a></div>
+        </div>
+    </div>
+    <md-divider></md-divider>
+
+    <div layout="row" layout-wrap class="layout-tiles" ng-show="box_layout">
+        <md-content flex="25" flex-md="33" flex-sm="50" flex-xs="100" ng-repeat="git in repo_record | unique:'id'" class="box_layout" style="padding: 10px">
+            <md-card ng-style="{'background-color':git.color}">
+                <md-card-header style="z-index:1">
+                    <md-card-avatar>
+                    <img ng-src="{{ git.owner.avatar_url }}"/>
+                    </md-card-avatar>
+                    <md-card-header-text style="margin-top: 20px;">
+                    <span class="md-title"><a ng-href="{{git.html_url}}" class="md-title" target="_blank" style="font-size: 16px">{{ git.name }}</a></span>
+                    </md-card-header-text>
+                </md-card-header>
+            </md-card>
+            <md-content layout-padding class="box-body-right">
+                <div layout="column">
+                    <div flex>
+                        <ul class="box-body-left">
+                        <li><md-icon class="material-icons"><span>&#xE8A6;</span></md-icon> <a ui-sref="author({author : git.owner.login})">{{ git.owner.login }}</a></li>
+                        <li><md-icon class="material-icons"><span>&#xE83A;</span></md-icon> {{git.stargazers_count}}</li>
+                        <li><md-icon class="material-icons"><span>&#xE335;</span></md-icon> {{git.forks}}</li>
+                        <li><md-icon class="material-icons"><span>&#xE8B2;</span></md-icon> {{git.open_issues_count}} </li>
+                        <li><md-icon class="material-icons"><span>&#xE417;</span></md-icon> {{git.watchers_count}} </li>
+                        <li><md-icon class="material-icons"><span>&#xE192;</span></md-icon> {{git.created_at | date:'yyyy-MM-dd' }} </li>
+                        <li><md-icon class="material-icons"><span>&#xE157;</span></md-icon> <a ng-href="{{git.clone_url}}">clone url</a></li>
+                        </ul>
+                    </div>
+                    <div flex>
+                        <hr/>
+                        <p>{{ git.description }}</p>
+                    </div>
+                </div>
+            </md-content>
+        </md-content>
+    </div>
+    <div layout="column" ng-show="list_layout">
+            <md-list-item flex ng-repeat="git in repo_record | unique:'id'" layout-padding class="noright" style="overflow:hidden;border-bottom: 2px solid #eee">
+                <img alt="{{ git.full_name }}" ng-src="{{ git.owner.avatar_url }}" class="md-avatar"/>
+                <div class="md-list-item-text" ng-class="{'md-offset': phone.options.offset }">
+                    <h4 style="margin:0px"><a  ng-href="{{git.html_url}}" class="md-title" target="_blank"> {{ git.name }} </a></h4>
+                    <span class="meta_data" hide-gt-md hide-md>
+                    <md-icon class="material-icons"><span>&#xE8A6;</span></md-icon> <a ui-sref="author({author : git.owner.login})">{{ git.owner.login }}</a>
+                    <md-icon class="material-icons"><span>&#xE83A;</span></md-icon> {{git.stargazers_count}}
+                    <md-icon class="material-icons"><span>&#xE335;</span></md-icon> {{git.forks}}
+                    <md-icon class="material-icons"><span>&#xE8B2;</span></md-icon> {{git.open_issues_count}} 
+                    <md-icon class="material-icons"><span>&#xE417;</span></md-icon> {{git.watchers_count}} 
+                    <md-icon class="material-icons"><span>&#xE192;</span></md-icon> {{git.created_at | date:'yyyy-MM-dd' }} 
+                    <md-icon class="material-icons"><span>&#xE157;</span></md-icon> <a ng-href="{{git.clone_url}}">clone url</a>
+                    </span>
+                </div>
+                <div class="md-secondary" hide-xs hide-sm>
+                    <span class="meta_data">
+                    <md-icon class="material-icons"><span>&#xE8A6;</span></md-icon> <a ui-sref="author({author : git.owner.login})">{{ git.owner.login }}</a>
+                    <md-icon class="material-icons"><span>&#xE83A;</span></md-icon> {{git.stargazers_count}}
+                    <md-icon class="material-icons"><span>&#xE335;</span></md-icon> {{git.forks}}
+                    <md-icon class="material-icons"><span>&#xE8B2;</span></md-icon> {{git.open_issues_count}} 
+                    <md-icon class="material-icons"><span>&#xE417;</span></md-icon> {{git.watchers_count}} 
+                    <md-icon class="material-icons"><span>&#xE192;</span></md-icon> {{git.created_at | date:'yyyy-MM-dd' }} 
+                    <md-icon class="material-icons"><span>&#xE157;</span></md-icon> <a ng-href="{{git.clone_url}}">clone url</a>
+                    </span>
+                </div>
+            </md-list-item>
+    </div>
+    <div ng-if="total_github_repo == 0" class="not_found_message">Not Found. May be Developer are Busy with other open Source Project</div>
+    </div>
+    <md-divider></md-divider>
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <md-button ng-click="loadMore()" class="load-more" aria-label="Settings">{{(load_more == 1) ? 'Loading..' : 'Load Next 100'}}</md-button>
+    </section>
+</md-content>
+
+<footer>
+    <div layout="row" layout-align="center center">
+        <h2>"Hello World" <i class="fa fa-github"></i> <i><a ng-href="https://github.com/mddanishyusuf/" target="_blank">Mohd Danish Yusuf</i></h2>
+    </div>
+</footer>

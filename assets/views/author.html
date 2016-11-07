@@ -1,0 +1,74 @@
+<div layout="row" layout-sm="column" layout-align="space-around" layout-align="top center" ng-show="loader" style="background-color: rgb(250,250,250)">
+    <md-progress-circular md-mode="indeterminate" md-diameter="20px"></md-progress-circular>
+</div>
+<div ng-show="author_show">
+<md-card>
+    <md-card-header>
+        <md-card-avatar style="height: auto;width: 150px">
+        	<img ng-src="{{ author_data.avatar_url }}"/>
+        </md-card-avatar>
+        <md-card-header-text style="margin-top: 20px;">
+        	<span class="md-title" style="font-size: 35px;"><a ng-href="{{author_data.html_url}}" target="_blank">{{ author_data.name }}</a></span>
+        	<span class="md-title" style="font-size: 18px;">{{ author_data.login }}</span>
+        	<span class="md-title">{{ author_data.bio }}</span>
+        </md-card-header-text>
+    </md-card-header>
+</md-card>
+<div layout="column" layout-md="row" layout-lg="row" layout-xs="column" class="author_meta">
+<div flex>
+  <i class="material-icons" title="Company">&#xE7EF;</i> <h3 ng-attr-title="{{author_data.company}}">{{(author_data.company == null) ? 'Not Mentioned' : author_data.company}}</h3>
+</div>
+<div flex>
+  <i class="material-icons" title="Location">&#xE0C8;</i> <h3 ng-attr-title="{{author_data.location}}">{{(author_data.location == null) ? 'Not Mentioned' : author_data.location}}</h3>
+</div>
+<div flex>
+  <i class="material-icons" title="Email">&#xE0BE;</i> <h3 ng-attr-title="{{author_data.email}}">{{(author_data.email == null) ? 'Not Mentioned' : author_data.email}}</h3>
+</div>
+<div flex>
+  <i class="material-icons" title="Blog">&#xE157;</i> <h3 ng-attr-title="{{author_data.email}}">{{(author_data.email == null) ? 'Not Mentioned' : author_data.blog}}</h3>
+</div>
+<div flex>
+<i class="material-icons" title="Join Date">&#xE192;</i> <h3 ng-attr-title="{{author_data.created_at}}">{{author_data.created_at | date:'yyyy/MM/dd'}}</h3>
+</div>
+</div>
+<div layout="row" layout-xs="column" layout-sm="column">
+<div flex flex-sm="100" flex-xs="100" layout-padding>
+{{author_data.public_repos}} Repositories {{author_data.followers}} Followers {{author_data.following}} Following
+<div layout="row" layout-wrap class="layout-tiles">
+    <div flex="25" flex-md="33" flex-sm="50" flex-xs="100" ng-repeat="git in repo_data" class="box_layout" style="padding: 10px">
+        <md-card ng-style="{'background-color':git.color}">
+            <md-card-header>
+                <md-card-header-text>
+                <span class="md-title"><a ng-href="{{git.html_url}}" class="md-title" target="_blank" style="font-size: 16px">{{ git.name }}</a></span>
+                </md-card-header-text>
+            </md-card-header>
+        </md-card>
+        <md-content layout-padding class="box-body-right">
+            <div layout="column">
+            <div flex>
+                <ul class="box-body-left">
+                <li><md-icon class="material-icons"><span>&#xE83A;</span></md-icon> {{git.stargazers_count}}</li>
+                <li><md-icon class="material-icons"><span>&#xE335;</span></md-icon> {{git.forks}}</li>
+                <li><md-icon class="material-icons"><span>&#xE8B2;</span></md-icon> {{git.open_issues_count}} </li>
+                <li><md-icon class="material-icons"><span>&#xE417;</span></md-icon> {{git.watchers_count}} </li>
+                <li><md-icon class="material-icons"><span>&#xE192;</span></md-icon> {{git.created_at | date:'yyyy-MM-dd' }} </li>
+                <li><md-icon class="material-icons"><span>&#xE157;</span></md-icon> <a ng-href="{{git.clone_url}}">clone url</a></li>
+                </ul>
+            </div>
+            <div flex>
+            <hr/><p>{{ git.description }}</p></div>
+            </div>
+        </md-content>
+    </div>
+</div>
+<md-divider></md-divider>
+    <div layout="row" layout-sm="column" layout-align="space-around" layout-align="top center" ng-show="showLoadMore" style="background-color: rgb(250,250,250)">
+        <md-progress-circular md-mode="indeterminate" md-diameter="20px"></md-progress-circular>
+    </div>
+
+    <section layout="row" layout-sm="column" layout-align="center center" ng-show="!showLoadMore" ng-hide="repo_data.length == author_data.public_repos" layout-wrap>
+        <md-button ng-click="loadMore()" class="load-more" aria-label="Settings">Load Next 100</md-button>
+    </section>
+</div>
+</div>
+</div>
