@@ -59,7 +59,7 @@ body{
 }
 .nav_bar{
   font-weight: 700;
-  color:rgb(116, 113, 113)	
+  color:rgb(116, 113, 113)  
 }
 .footer{
   position:absolute;
@@ -149,7 +149,7 @@ md-card{
   font-family: 'Montserrat', sans-serif;
 }
 .home-title h2, .home-title h4{
-    color: rgb(197, 194, 194);
+    color: #fff;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
     font-weight: 400;
@@ -163,17 +163,31 @@ md-card{
     margin-top: 0px
 }
 .search_section{
-    background-color: #22313f;
-    background-image: url('../img/axiom-pattern.png');
+    background: rgb(24,42,115);
+    background: -moz-linear-gradient(-45deg, rgba(24,42,115,1) 0%, rgba(33,138,174,1) 69%, rgba(32,167,172,1) 89%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(24,42,115,1)), color-stop(69%,rgba(33,138,174,1)), color-stop(89%,rgba(32,167,172,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(24,42,115,1) 0%,rgba(33,138,174,1) 69%,rgba(32,167,172,1) 89%);
+    background: -o-linear-gradient(-45deg, rgba(24,42,115,1) 0%,rgba(33,138,174,1) 69%,rgba(32,167,172,1) 89%);
+    background: -ms-linear-gradient(-45deg, rgba(24,42,115,1) 0%,rgba(33,138,174,1) 69%,rgba(32,167,172,1) 89%);
+    background: linear-gradient(135deg, rgba(24,42,115,1) 0%,rgba(33,138,174,1) 69%,rgba(32,167,172,1) 89%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#182a73', endColorstr='#20a7ac',GradientType=1 );
+    border-radius: 0;
+    margin: 0em;
+    padding: 1rem 0rem 0;
 }
 
 .md-button{
-    border-radius: 0px;
-    padding: 0px 20px;
-    font-family: 'Montserrat', sans-serif;
+    padding: 0 20px;
+    font-family: 'Montserrat',sans-serif;
     text-transform: capitalize;
     color: #777;
-    background-color: #fff
+    background-color: #fff;
+    margin: 40px auto 20px auto;
+    width: 200px;
+    border-radius: 500px;
+    background-color: transparent !important;
+    color: #fff;
+    border: 3px solid #fff;
 }
 .home-title a:hover{
     color: #777;
