@@ -1,25 +1,25 @@
 <md-content class="search_section">
 <div layout="column" layout-align="center center" layout-padding>
 	<div flex class="home-title"><h2 align="center">GithubSearch</h2><h4 align="center">Explore Github Public Repository</h4></div>
-	<div flex><md-button ui-sref="keyword">By Keyword Search</md-button> <md-button ui-sref="language">By Language Search</md-button></div>
+	<div flex style="text-align: center;"><md-button ui-sref="keyword">By Keyword Search</md-button> <md-button ui-sref="language">By Language Search</md-button></div>
 </div>
 </md-content>
 <md-content class="home-col" layout-align="center">
-	<h1><span class="titl">Top Authors of Github</span></h1>
+	<h1><span class="titl" style="color: #010101">Top Authors of Github</span></h1>
 	<md-card-avatar ng-repeat="avt in image_show | limitTo:208">
 		<md-tooltip>{{ avt.title }}</md-tooltip>
 		<img ng-src="{{ avt.img_url }}" class="author_img"/>
 	</md-card-avatar>
 </md-content>
-<div layout="row" class="home-col" layout-padding layout-align="center center" style="background-color: #F1A9A0;">
+<div layout="row" class="home-col home-col-1" layout-padding layout-align="center center">
 	<div flex><h1><span class="titl">Explore All Github Public Repository</span></h1></div>
 <div flex hide-xs><img src="assets/img/img1.jpg" width="100%"></div>
 </div>
-<div layout="row" class="home-col" layout-padding layout-align="center center" style="background-color: #4183D7;">
+<div layout="row" class="home-col home-col-2" layout-padding layout-align="center center">
 	<div flex hide-xs><img src="assets/img/mobile-size.jpg" width="100%"></div>
 	<div flex><h1><span class="titl">Responsive Interface</span></h1></div>
 </div>
-<div layout="row" class="home-col" layout-padding layout-align="center center" style="background-color: #336E7B">
+<div layout="row" class="home-col home-col-3" layout-padding layout-align="center center">
 	<div flex><h1><span class="titl">Explore Github Public Repository Unlimited</span></h1></div>
 	<div flex hide-xs><img src="assets/img/list_view.jpg" width="100%"></div>
 </div>
