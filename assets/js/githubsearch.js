@@ -4,7 +4,7 @@ app.controller('homeController',['$scope','$http','$rootScope',function($scope, 
     $http.get('assets/author.json').success(function(res){
         $scope.image_show = res
         })
-    $rootScope.title = 'Home | Explore Github Open Source Projects'
+    $rootScope.title = 'Home | Explore GitHub Open Source Projects'
 }])
 
 app.filter('unique', function() {
