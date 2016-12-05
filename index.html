@@ -38,12 +38,13 @@
 
 </script>
 </head>
-<body ng-cloak>
+<body ng-controller="mainController" ng-cloak>
 <md-toolbar class="md-hue-2" style="background-color: rgb(255,255,255);color:rgb(116, 113, 113);border-bottom: 2px solid #eee" class="nav_bar">
     <div class="md-toolbar-tools">
         <a href="#/"><img src="assets/img/logo-image.jpg" width="35px"/> </a>    
         <h2><span><a href="#/"> GithubSearch</a></span></h2>
         <span flex></span>
+        <md-button class="md-primary md-raised" ng-click="feedbackDialog($event)" style="color:#747171;border:none;box-shadow: none;"><i class="material-icons">feedback</i> Feedback</md-button>
         <md-card hide-xs style="box-shadow: none">
         <md-card-header>
             <md-card-avatar style="width: 40px;">
