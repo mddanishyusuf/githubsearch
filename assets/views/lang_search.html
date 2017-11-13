@@ -3,7 +3,7 @@
         <form ng-submit="$event.preventDefault()" flex-xs="90" flex="60">
             <h2 align="center">Language Search</h2>
         	<h4 align="center">Get repository related to selected language</h4>
-            <md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText" md-selected-item-change="ctrl.selectedItemChange(item)" md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item" md-min-length="0" placeholder="Explore Github Public Repository by language name.">
+            <md-autocomplete md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText" md-selected-item-change="ctrl.selectedItemChange(item)" md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item" md-min-length="0" placeholder="Explore GitHub Public Repository by language name.">
                 <md-item-template>
                     <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item}}</span>
                 </md-item-template>
