@@ -262,3 +262,7 @@ padding: 20px
     background: linear-gradient(45deg, #336E7B 0%,rgba(34, 49, 63,1) 48%,rgba(102, 51, 153,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e153a', endColorstr='#f3c9d7',GradientType=1 );
 }
+.repo-description {
+  height: 45px;
+  overflow: hidden;
+}
