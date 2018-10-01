@@ -7,7 +7,7 @@
             <div class="col-md-5" flex>
             <span ng-click="listLayout()" style="cursor: pointer"><i class="fa fa-list"></i></span>
             <span ng-click="boxLayout()" style="cursor: pointer"><i class="fa fa-th"></i></span> 
-            <span class="responce-message"><b>{{total_github_repo}}</b> Repositories in <b>"{{language_name}}" </b></span>
+            <span class="responce-message"><b>{{total_github_repo}}</b> Results Found, {{language_name}}
             </div>
             <div class="col-md-5 trending_repo" ng-show="language_page" flex><b>Trending Repository : </b> <a ng-click="trending(language_name,today_date,'today')">Today</a> / <a ng-click="trending(language_name,last_weak_date,'last_weak')">Last Waek</a> / <a ng-click="trending(language_name,last_month_date,'last_month')">Last Month</a></div>
         </div>

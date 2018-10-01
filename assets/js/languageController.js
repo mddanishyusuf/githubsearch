@@ -7,7 +7,7 @@ app.controller('langPageController',['$scope','$window','$rootScope',function($s
 }])
 
 app.controller('searchPageController',['$scope', '$http', '$stateParams', '$window', '$rootScope','$state',function($scope, $http, $stateParams, $window, $rootScope, $state){
-    $scope.language_name = $stateParams.item_name
+    $scope.language_name = 'Repositories in "' + $stateParams.item_name + '"'
     $scope.page_no = $stateParams.page_no
     $scope.page_count = 1    
     $scope.language_page = true

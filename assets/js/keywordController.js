@@ -6,6 +6,7 @@ app.controller('keywordPageController',['$scope', '$state','$rootScope', functio
 }])
 
 app.controller('keywordResultPageController',['$scope', '$http', '$stateParams', '$window', '$rootScope','$state',function($scope, $http, $stateParams, $window, $rootScope, $state){
+    $scope.language_name = 'Searching keyword "'+$stateParams.keywords +'"'
     $scope.page_count = 1
     $scope.showTopGitList = true
     $scope.gitList = false
