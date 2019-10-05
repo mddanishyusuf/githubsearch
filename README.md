@@ -3,4 +3,4 @@ githubsearch is search engine to explore github.com public repository with langu
 
 ### Online Demo
 
-Go here [githubsearch](https://mohddanish.me/githubsearch/)
+Go here [https://mddanishyusuf.github.io/githubsearch/](https://mddanishyusuf.github.io/githubsearch/)
