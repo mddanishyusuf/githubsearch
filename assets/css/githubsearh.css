@@ -95,6 +95,7 @@ body{
 .layout-tiles img{
   margin-top: 4px;
   border: 2px solid #eee;
+  background-color: #fff;
 }
 md-card md-card-header md-card-avatar{
   width:60px;
@@ -265,4 +266,5 @@ padding: 20px
 .repo-description {
   height: 45px;
   overflow: hidden;
+  padding-bottom: 5px;
 }
